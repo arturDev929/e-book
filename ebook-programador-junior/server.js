@@ -5,7 +5,7 @@ import path from "node:path";
 import express from "express";
 import multer from "multer";
 import nodemailer from "nodemailer";
-import { getEmailConfiguration } from "./email-config.js";
+import { createEmailSender, getEmailConfiguration } from "./email-config.js";
 import { validateMukutuReceipt } from "./receipt-validation.js";
 
 const app = express();
@@ -39,7 +39,13 @@ if (!fs.existsSync(pdfPath)) {
 }
 
 const emailConfiguration = getEmailConfiguration();
-const transporter = nodemailer.createTransport(emailConfiguration.transport);
+const transporter = emailConfiguration.sendGridApiKey
+  ? undefined
+  : nodemailer.createTransport(emailConfiguration.transport);
+const sendEmail = createEmailSender({
+  sendGridApiKey: emailConfiguration.sendGridApiKey,
+  transporter
+});
 
 const processedPayments = new Set();
 const receiptUpload = multer({
@@ -281,7 +287,7 @@ app.post("/comprar", (req, res, next) => {
     const token = createDeliveryToken(email, receipt.paymentId);
     const downloadUrl = `${publicBaseUrl}/download?token=${encodeURIComponent(token)}`;
 
-    await transporter.sendMail({
+    await sendEmail({
       from: emailConfiguration.from,
       to: email,
       subject: "Seu e-book: Programador Júnior em Angola",

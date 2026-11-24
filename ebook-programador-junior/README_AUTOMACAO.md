@@ -33,7 +33,7 @@ O preço configurado é **24.000 Kz**. O faturamento depende das vendas e não �
 - `PAYMENT_PHONE`: número que receberá o pagamento Express.
 - `EBOOK_PRICE_AOA`: preço exato em AOA/Kz (padrão: `24000`).
 - `MUKUTU_API_URL`: endpoint de validação da Mukutu.
-- `SENDGRID_API_KEY`: chave de API do SendGrid. Guarde-a apenas em variáveis de ambiente, nunca no repositório ou no chat; quando definida, o app usa SMTP do SendGrid.
+- `SENDGRID_API_KEY`: chave de API do SendGrid. Guarde-a apenas em variáveis de ambiente, nunca no repositório ou no chat; quando definida, o app usa a API HTTPS do SendGrid.
 - `EMAIL_REMETENTE`: remetente verificado no SendGrid, por exemplo `E-BOOK <sender@example.com>`.
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `FROM_EMAIL`: configuração SMTP alternativa, usada quando `SENDGRID_API_KEY` não está definida.
 
@@ -50,5 +50,5 @@ Depois de guardar as variáveis, faça um novo deploy. Teste a página inicial e
 ## Limitações importantes
 
 - O processamento de comprovativos duplicados usa memória do processo; um reinício do serviço limpa essa lista. Para vendas em escala, use um banco persistente para registar transações.
-- A entrega depende da disponibilidade da API Mukutu e do SMTP.
+- A entrega depende da disponibilidade da API Mukutu e do SendGrid (ou do servidor SMTP alternativo).
 - O guia é educativo e não garante emprego, clientes ou um rendimento específico.
