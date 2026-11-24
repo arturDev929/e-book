@@ -16,7 +16,7 @@ O preço inicial configurado é **2.500 Kz**. A meta de 20.000 Kz em vendas brut
 ## Configuração local
 
 1. Copie `.env.example` para `.env`.
-2. Preencha `PAYMENT_PHONE`, as credenciais Mukutu, as variáveis SMTP e os segredos.
+2. Preencha `PAYMENT_PHONE`, as variáveis SMTP e os segredos.
 3. Coloque o PDF em `ebook.pdf` ou ajuste `PDF_PATH`.
 4. Instale e execute:
 
