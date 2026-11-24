@@ -5,6 +5,7 @@ import path from "node:path";
 import express from "express";
 import multer from "multer";
 import nodemailer from "nodemailer";
+import { getEmailConfiguration } from "./email-config.js";
 import { validateMukutuReceipt } from "./receipt-validation.js";
 
 const app = express();
@@ -37,15 +38,8 @@ if (!fs.existsSync(pdfPath)) {
   process.exit(1);
 }
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 465),
-  secure: process.env.SMTP_SECURE !== "false",
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
-  }
-});
+const emailConfiguration = getEmailConfiguration();
+const transporter = nodemailer.createTransport(emailConfiguration.transport);
 
 const processedPayments = new Set();
 const receiptUpload = multer({
@@ -288,7 +282,7 @@ app.post("/comprar", (req, res, next) => {
     const downloadUrl = `${publicBaseUrl}/download?token=${encodeURIComponent(token)}`;
 
     await transporter.sendMail({
-      from: process.env.FROM_EMAIL || process.env.SMTP_USER,
+      from: emailConfiguration.from,
       to: email,
       subject: "Seu e-book: Programador Júnior em Angola",
       text: [

@@ -18,9 +18,13 @@ services:
       - key: PAYMENT_PHONE
         sync: false
       - key: EBOOK_PRICE_AOA
-        value: "2500"
+        value: "24000"
       - key: MUKUTU_API_URL
         value: https://ocr-api-sdte.onrender.com/receipt-validation/v1/validate
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: EMAIL_REMETENTE
+        sync: false
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT
