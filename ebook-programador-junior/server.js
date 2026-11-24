@@ -221,12 +221,12 @@ app.post("/comprar", (req, res, next) => {
     mukutuResponse = await fetch(mukutuApiUrl, {
       method: "POST",
       body: mukutuForm,
-      signal: AbortSignal.timeout(20000)
+      signal: AbortSignal.timeout(60000)
     });
   } catch (error) {
     console.error("Mukutu validation request failed:", error.message);
     return res.status(502).type("html").send(renderPage("Validação indisponível", `
-      <h1>Não foi possível validar agora</h1><p>Tente novamente dentro de alguns minutos. O comprovativo não foi guardado.</p><p><a href="/">Voltar à loja</a></p>
+      <h1>Não foi possível validar agora</h1><p>A validação demorou ou ficou indisponível. O comprovativo não foi guardado e nenhum e-mail foi enviado. Tente novamente mais tarde com o mesmo comprovativo; não faça outro pagamento.</p><p><a href="/">Voltar à loja</a></p>
     `));
   }
 
@@ -242,7 +242,7 @@ app.post("/comprar", (req, res, next) => {
   if (!mukutuResponse.ok) {
     console.error("Mukutu validation returned HTTP status:", mukutuResponse.status);
     return res.status(502).type("html").send(renderPage("Validação indisponível", `
-      <h1>Não foi possível validar agora</h1><p>Tente novamente mais tarde. O comprovativo não foi guardado.</p><p><a href="/">Voltar à loja</a></p>
+      <h1>Não foi possível validar agora</h1><p>O comprovativo não foi guardado e nenhum e-mail foi enviado. Tente novamente mais tarde com o mesmo comprovativo; não faça outro pagamento.</p><p><a href="/">Voltar à loja</a></p>
     `));
   }
 
