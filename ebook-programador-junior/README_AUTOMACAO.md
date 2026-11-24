@@ -1,70 +1,52 @@
-# Automacao de venda do e-book
+# Venda do e-book
 
-## Importante
+## Como funciona
 
-Este servidor recebe um webhook autenticado do seu processador de pagamento. Ele nao gera referências de pagamento nem valida Multicaixa sozinho. Escolha um processador com webhook e HMAC configuravel. O exemplo suporta os campos comuns: `status`, `payment_status`, `customer_email`, `email_cliente`, `payment_id`, `transaction_id`, `reference` e `id`.
+1. O cliente paga o valor indicado pelo Multicaixa Express para o número configurado.
+2. O cliente envia o e-mail e o comprovativo bancário em PDF pelo formulário.
+3. O servidor envia o PDF à API Mukutu para validação.
+4. O e-book só é enviado se a API confirmar o pagamento, o valor exato, a moeda AOA, o número destinatário e um identificador de transação.
 
-## Configuracao local
+A API Mukutu valida comprovativos; não inicia nem recebe pagamentos. O comprovativo é enviado à Mukutu para análise e não é guardado pela aplicação. A API documentada aceita PDF; outros formatos são recusados.
 
-1. Copie `.env.example` para `.env` e configure todos os valores.
-2. Coloque o PDF em `ebook.pdf` ou altere `PDF_PATH`.
-3. Instale as dependencias:
+## Preço
 
-   `npm install`
+O preço inicial configurado é **2.500 Kz**. A meta de 20.000 Kz em vendas brutas por dia corresponde a oito vendas nesse preço; isso não é garantido e não desconta taxas ou outros custos. Ajuste `EBOOK_PRICE_AOA` no Render para alterar o valor.
 
-4. Execute:
+## Configuração local
 
-   `npm start`
+1. Copie `.env.example` para `.env`.
+2. Preencha `PAYMENT_PHONE`, as credenciais Mukutu, as variáveis SMTP e os segredos.
+3. Coloque o PDF em `ebook.pdf` ou ajuste `PDF_PATH`.
+4. Instale e execute:
 
-## Variaveis
+   ```sh
+   npm install
+   npm start
+   ```
 
-- `PUBLIC_BASE_URL`: URL publica do serviço no Render.
-- `WEBHOOK_SECRET`: segredo usado para validar o HMAC do gateway.
-- `DELIVERY_SECRET`: segredo usado para assinar links de download.
-- `PDF_PATH`: caminho do PDF no servidor.
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`: configuração SMTP.
-- `SMTP_USER`, `SMTP_PASS`: credenciais SMTP. Use senha de aplicativo.
-- `FROM_EMAIL`: remetente visível no e-mail.
-- `DELIVERY_EXPIRY_HOURS`: validade do link.
+## Variáveis de ambiente
 
-Não coloque senha real no repositório.
+- `PUBLIC_BASE_URL`: URL pública do serviço.
+- `DELIVERY_SECRET`: segredo forte usado para assinar links temporários de download.
+- `PDF_PATH`: caminho do PDF do e-book.
+- `PAYMENT_PHONE`: número que receberá o pagamento Express.
+- `EBOOK_PRICE_AOA`: preço exato em AOA/Kz (padrão: `2500`).
+- `MUKUTU_API_URL`: endpoint de validação da Mukutu.
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `FROM_EMAIL`: configuração para envio do e-book por e-mail. Use senha de aplicativo quando o provedor exigir.
 
-## Webhook
+Nunca coloque credenciais reais no repositório ou no formulário de compra.
 
-Configure no seu gateway:
+## Configuração no Render
 
-- URL: `https://SEU-SERVICO.onrender.com/webhook-pagamento`
-- Método: `POST`
-- Cabeçalhos suportados pelo servidor: `x-webhook-signature`, `x-signature` ou `kubeta-signature`.
-- Assinatura: HMAC SHA-256 hexadecimal ou com prefixo `sha256=`.
-- Chave: o valor de `WEBHOOK_SECRET`.
+No serviço existente, adicione `PAYMENT_PHONE` em **Environment**. Confirme também `EBOOK_PRICE_AOA=2500`, `PDF_PATH=./ebook.pdf`, `PUBLIC_BASE_URL`, `DELIVERY_SECRET` e as variáveis SMTP.
 
-O gateway deve enviar o segredo como HMAC sobre o corpo bruto da requisição. Se a plataforma usar outro formato de assinatura, adapte `verifyWebhookSignature`.
+A especificação OpenAPI publicada pela Mukutu declara Basic Auth, mas o endpoint de produção respondeu sem autenticação com uma resposta de validação do comprovativo. A aplicação não envia credenciais. Se a Mukutu passar a exigir autenticação, o endpoint responderá com erro e será necessário atualizar a integração.
 
-Exemplo mínimo de corpo:
+Depois de guardar as variáveis, faça um novo deploy. Teste a página inicial e `/health`. Faça primeiro um teste real com um pagamento de baixo valor antes de divulgar a loja.
 
-```json
-{
-  "status": "pago",
-  "email_cliente": "cliente@exemplo.com",
-  "payment_id": "pagamento-123",
-  "produto_id": "ebook-programador-junior"
-}
-```
+## Limitações importantes
 
-## Deploy no Render
-
-1. Envie o projeto para GitHub.
-2. No Render, escolha **New > Blueprint** e importe `render.yaml`.
-3. Configure `PUBLIC_BASE_URL`, `SMTP_USER`, `SMTP_PASS` e `FROM_EMAIL`.
-4. Adicione o PDF ao repositório privado ou monte-o por um volume persistente.
-5. O arquivo PDF não deve ficar num endpoint público.
-6. Configure o webhook da plataforma de pagamentos para a URL acima.
-
-## Segurança
-
-- O download é permitido apenas por token assinado e temporário.
-- O webhook exige assinatura válida.
-- O servidor reduz reenvios usando o identificador do pagamento em memória.
-- Em produção com várias instâncias, substitua o conjunto em memória por PostgreSQL ou Redis.
-*** End Patch
+- O processamento de comprovativos duplicados usa memória do processo; um reinício do serviço limpa essa lista. Para vendas em escala, use um banco persistente para registar transações.
+- A entrega depende da disponibilidade da API Mukutu e do SMTP.
+- O guia é educativo e não garante emprego, clientes ou um rendimento específico.

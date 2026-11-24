@@ -1,35 +1,35 @@
-# Capitulo 2: O Portfolio Perfeito
+# Capítulo 2: O Portfólio Perfeito
 
 ## 2.1 O que um recrutador procura
 
-Um portfolio eficaz nao precisa de dezenas de projectos. Dois projectos completos demonstram mais maturidade do que dez mini-jogos sem integracao, sem documentacao e sem utilizador real.
+Um portfólio eficaz não precisa de dezenas de projectos. Dois projectos completos demonstram mais maturidade do que dez mini-jogos sem integração, sem documentação e sem utilizador real.
 
 Recrutadores procuram sinais de:
 
 - Capacidade de explicar o problema.
-- Organizacao do codigo.
+- Organização do código.
 - Uso adequado de Git e GitHub.
-- Compreensao de APIs e bases de dados.
-- Interface utilizavel.
+- Compreensão de APIs e bases de dados.
+- Interface utilizável.
 - Tratamento de erros e estados vazios.
 - Hospedagem funcional.
-- Testes ou verificacoes importantes.
+- Testes ou verificações importantes.
 - Responsabilidade sobre segredos e dados.
 
-Cada projecto deve ter uma URL activa, um repositorio publico, um README claro e uma lista das funcionalidades. Um link que mostra um erro em producao prejudica mais do que nao ter portfolio.
+Cada projecto deve ter uma URL activa, um repositório público, um README claro e uma lista das funcionalidades. Um link que mostra um erro em produção prejudica mais do que não ter portfólio.
 
 ## 2.2 Projeto 1: Sistema de pedidos para restaurante
 
-Construa uma aplicacao para um restaurante ficticio ou real com pedidos no browser e painel administrativo.
+Construa uma aplicação para um restaurante fictício ou real com pedidos no browser e painel administrativo.
 
 ### Funcionalidades
 
-- Catalogo de pratos com nome, descricao, preco e fotografia.
+- Catálogo de pratos com nome, descrição, preço e fotografia.
 - Carrinho de compras.
-- Criacao de pedido.
-- Alteracao do estado: recebido, em preparacao, pronto e entregue.
-- Historico de pedidos.
-- Autenticacao simples para administradores.
+- Criação de pedido.
+- Alteração do estado: recebido, em preparação, pronto e entregue.
+- Histórico de pedidos.
+- Autenticação simples para administradores.
 - Painel para adicionar ou desactivar pratos.
 - Regras para validar pedidos no servidor.
 
@@ -42,63 +42,63 @@ Use Node.js com Express no back-end. Crie rotas REST, por exemplo:
 - `GET /api/orders`
 - `PATCH /api/orders/:id/status`
 
-Use uma base de dados PostgreSQL quando houver possibilidade, ou MongoDB Atlas para comecar. Nunca use dados de clientes reais em exemplos publicos. Guarde a senha com uma biblioteca de hashing e variaveis de ambiente para segredo, ligacao da base de dados e configuracao do ambiente.
+Use uma base de dados PostgreSQL quando houver possibilidade, ou MongoDB Atlas para começar. Nunca use dados de clientes reais em exemplos públicos. Guarde a senha com uma biblioteca de hashing e variáveis de ambiente para segredo, ligação da base de dados e configuração do ambiente.
 
-Separe responsabilidades em pastas como `routes`, `controllers`, `services` e `models`. Mesmo como projecto pequeno, esta separacao facilita manutencao.
+Separe responsabilidades em pastas como `routes`, `controllers`, `services` e `models`. Mesmo como projecto pequeno, esta separação facilita manutenção.
 
 ### Interface
 
-Crie uma experiencia mobile-first. O cliente angolano pode abrir o sistema no celular com internet limitada. Comprima imagens, evite bibliotecas pesadas e informe quando o pedido foi recebido. Adicione estados claros e mensagens de erro.
+Crie uma experiência mobile-first. O cliente angolano pode abrir o sistema no celular com internet limitada. Comprima imagens, evite bibliotecas pesadas e informe quando o pedido foi recebido. Adicione estados claros e mensagens de erro.
 
-Use dados tipicos de Angola apenas em ambiente de demonstracao: Luanda, Talatona, Benfica, Maculusso ou outras zonas conhecidas. Inclua referencia ao IVA, entrega ou pagamento apenas se a regra do projecto tiver sido definida. Nao invente taxas legais sem confirmar.
+Use dados típicos de Angola apenas em ambiente de demonstração: Luanda, Talatona, Benfica, Maculusso ou outras zonas conhecidas. Inclua referência ao IVA, entrega ou pagamento apenas se a regra do projecto tiver sido definida. Não invente taxas legais sem confirmar.
 
 ### Historias que devem aparecer no README
 
 - Como o cliente faz o pedido.
 - Como o administrador muda o estado.
-- Como a aplicacao valida um pedido.
+- Como a aplicação válida um pedido.
 - Como executar localmente.
 - Como configurar a base de dados.
 - Como fazer deploy.
-- Quais sao as limitacoes conhecidas.
+- Quais são as limitações conhecidas.
 
-## 2.3 Projeto 2: Dashboard financeiro ou de gestao
+## 2.3 Projeto 2: Dashboard financeiro ou de gestão
 
-O segundo projecto deve resolver uma dor de gestao.
+O segundo projecto deve resolver uma dor de gestão.
 
-Escolha um tema: controlo de vendas de uma loja, gestao de obras, clientes de oficina, receitas de restaurante ou acompanhamento de candidatos.
+Escolha um tema: controlo de vendas de uma loja, gestão de obras, clientes de oficina, receitas de restaurante ou acompanhamento de candidatos.
 
 ### Exemplo de dashboard
 
-Construa uma API com dados ficticios de vendas e uma interface que apresenta:
+Construa uma API com dados fictícios de vendas e uma interface que apresenta:
 
-- Total vendido no periodo.
-- Numero de pedidos.
+- Total vendido no período.
+- Número de pedidos.
 - Ticket medio.
 - Produtos mais vendidos.
-- Metodo de pagamento.
+- Método de pagamento.
 - Filtro por data.
-- Exportacao CSV.
+- Exportação CSV.
 - Estados de carregamento, erro e vazio.
 
-Use dados seguros e claramente ficticios. O dashboard nao precisa de pagamentos reais, mas pode simular valores em Kwanzas e mostrar conversoes apenas como valores demonstrativos.
+Use dados seguros e claramente fictícios. O dashboard não precisa de pagamentos reais, mas pode simular valores em Kwanzas e mostrar conversões apenas como valores demonstrativos.
 
-## 2.4 Qualidade tecnica minima
+## 2.4 Qualidade técnica mínima
 
 Antes de publicar, responda a estas perguntas:
 
-- Todos os campos obrigatorios sao validados?
-- A API valida dados no servidor?
-- Senhas sao armazenadas com hash?
-- As variaveis secretas nao aparecem no repositorio?
-- Erros nao mostram detalhes internos ao utilizador?
-- Existe pagina para erro 404?
+- Todos os campos obrigatórios são validados?
+- A API válida dados no servidor?
+- Senhas são armazenadas com hash?
+- As variáveis secretas não aparecem no repositório?
+- Erros não mostram detalhes internos ao utilizador?
+- Existe página para erro 404?
 - O sistema funciona no celular?
-- Os filtros e paginacao nao quebram?
+- Os filtros e paginação não quebram?
 - O README explica como testar o projecto?
 - Os testes principais podem ser executados por outro desenvolvedor?
 
-Adicione testes para regras de negocio: criacao de pedido, validacao de campos, calculo de total e mudanca de estado. Testes nao precisam cobrir tudo no inicio, mas devem provar a logica central.
+Adicione testes para regras de negocio: criação de pedido, validação de campos, cálculo de total e mudança de estado. Testes não precisam cobrir tudo no início, mas devem provar a lógica central.
 
 ## 2.5 GitHub profissional
 
@@ -107,15 +107,15 @@ Organize o perfil de forma simples:
 - Nome real e fotografia profissional.
 - Cidade em Angola ou disponibilidade para remoto.
 - Biografia curta com tecnologia principal.
-- Links para LinkedIn e portfolio.
-- Dois repositorios fixados.
-- Nomes de repositorio claros.
+- Links para LinkedIn e portfólio.
+- Dois repositórios fixados.
+- Nomes de repositório claros.
 - Mensagens de commit objetivas.
-- README com imagens ou video curto.
+- README com imagens ou vídeo curto.
 
 Exemplo de estrutura de README:
 
-1. Nome e descricao.
+1. Nome e descrição.
 2. Problema resolvido.
 3. Tecnologias usadas.
 4. Principais funcionalidades.
@@ -125,37 +125,37 @@ Exemplo de estrutura de README:
 8. Melhorias futuras.
 9. Autor e contacto.
 
-Nao envie codigo minificado sem explicacao. GitHub nao deve parecer uma pasta de trabalhos da faculdade. Deve parecer um produto que foi concebido, construído e entregue.
+Não envie código minificado sem explicação. GitHub não deve parecer uma pasta de trabalhos da faculdade. Deve parecer um produto que foi concebido, construído e entregue.
 
-## 2.6 Publicacao no Render e Vercel
+## 2.6 Publicação no Render e Vercel
 
-Use Vercel para front-ends React, Next.js ou aplicacoes compativeis. Use Render para APIs Node.js e bases de dados geridas. Os planos gratuitos podem pausar ou limitar recursos; confirme a politica atual antes de entregar ao cliente.
+Use Vercel para front-ends React, Next.js ou aplicações compatíveis. Use Render para APIs Node.js e bases de dados geridas. Os planos gratuitos podem pausar ou limitar recursos; confirme a política atual antes de entregar ao cliente.
 
 ### Passos para publicar no Render
 
-1. Envie o codigo para GitHub.
+1. Envie o código para GitHub.
 2. Crie um novo Web Service no Render.
-3. Escolha o repositorio.
-4. Configure o comando de instalacao e arranque.
-5. Adicione as variaveis de ambiente.
+3. Escolha o repositório.
+4. Configure o comando de instalação e arranque.
+5. Adicione as variáveis de ambiente.
 6. Execute um deploy.
-7. Teste os endpoints em producao.
-8. Verifique a politica de inatividade do plano.
+7. Teste os endpoints em produção.
+8. Verifique a política de inatividade do plano.
 
 ### Passos para publicar no Vercel
 
-1. Importe o repositorio.
+1. Importe o repositório.
 2. Escolha a pasta correta, caso exista monorepo.
-3. Configure variaveis publicas e privadas.
+3. Configure variáveis públicas e privadas.
 4. Use a rede de deploy do Vercel.
 5. Teste o site no celular.
-6. Nao coloque chaves secretas em codigo executado pelo navegador.
+6. Não coloque chaves secretas em código executado pelo navegador.
 
-Se tiver apenas um repositorio Node.js completo com Express e interface publica, pode hospedar a interface no Vercel e a API no Render. Documente o endereco da API e configure CORS explicitamente.
+Se tiver apenas um repositório Node.js completo com Express e interface pública, pode hospedar a interface no Vercel e a API no Render. Documente o endereço da API e configure CORS explicitamente.
 
-## 2.7 Preparacao para entrevistas
+## 2.7 Preparação para entrevistas
 
-Prepare uma explicacao de dois minutos para cada projecto:
+Prepare uma explicação de dois minutos para cada projecto:
 
 - Qual era o problema.
 - Porque escolheu cada tecnologia.
@@ -164,4 +164,4 @@ Prepare uma explicacao de dois minutos para cada projecto:
 - Que melhoria faria agora.
 - Que resultado o utilizador obtinha.
 
-Nunca afirme que uma empresa o contratou se o projecto foi apenas demonstrativo. Use palavras honestas: "prototipo", "prova de conceito" ou "projecto demonstrativo". Esta honestidade gera confianca.
+Nunca afirme que uma empresa o contratou se o projecto foi apenas demonstrativo. Use palavras honestas: "protótipo", "prova de conceito" ou "projecto demonstrativo". Esta honestidade gera confiança.

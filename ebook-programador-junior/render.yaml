@@ -11,12 +11,16 @@ services:
         value: 20
       - key: PUBLIC_BASE_URL
         sync: false
-      - key: WEBHOOK_SECRET
-        generateValue: true
       - key: DELIVERY_SECRET
         generateValue: true
       - key: PDF_PATH
-        value: /opt/render/project/src/ebook.pdf
+        value: ./ebook.pdf
+      - key: PAYMENT_PHONE
+        sync: false
+      - key: EBOOK_PRICE_AOA
+        value: "2500"
+      - key: MUKUTU_API_URL
+        value: https://ocr-api-sdte.onrender.com/receipt-validation/v1/validate
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT

@@ -1,17 +1,17 @@
-# Capitulo 5: Como Cobrar e Receber
+# Capítulo 5: Como Cobrar e Receber
 
-## 5.1 Como definir o preco
+## 5.1 Como definir o preço
 
 O preço não deve ser definido apenas pelo número de horas. Precisa considerar:
 
 - Complexidade.
 - Número de telas.
-- Integracoes.
+- Integrações.
 - Gestão de utilizadores.
 - Hospedagem.
 - Base de dados.
 - Prazo.
-- Revisoes.
+- Revisões.
 - Suporte.
 - Risco técnico.
 - Conhecimento que tem de pesquisar.
@@ -24,23 +24,23 @@ Não use apenas a expressão "vou cobrar barato". Compare o valor de mercado, ma
 
 ### Projecto fechado
 
-Adequado quando o alcance esta claro:
+Adequado quando o alcance está claro:
 
 - O que sera feito.
 - O que não sera feito.
 - Quantas telas.
-- Quantas integracoes.
+- Quantas integrações.
 - Prazo.
-- Revisoes.
+- Revisões.
 - Pagamento.
 
 ### Hora
 
 Adequado para manutenção, depuração ou trabalho com requisitos incertos. Defina o valor por hora, reporte as horas e faça aprovação para ultrapassar o limite.
 
-### Retencao mensal
+### Retenção mensal
 
-Adequado para suporte continuo, atualizaçao de conteúdo e pequenas melhorias. O preço mensal deve limitar o volume de trabalho.
+Adequado para suporte contínuo, actualização de conteúdo e pequenas melhorias. O preço mensal deve limitar o volume de trabalho.
 
 ### Marco de entrega
 
@@ -65,9 +65,9 @@ Os valores abaixo são exemplos de mercado inicial, não taxas oficiais. Devem s
 | API simples com documentação | 180.000 a 450.000 Kz |
 | Integraçao com WhatsApp ou serviço externo | 100.000 a 350.000 Kz |
 | Diagnóstico e consultoria por hora | 8.000 a 25.000 Kz |
-| Manutencao mensal | 30.000 a 150.000 Kz |
+| Manutenção mensal | 30.000 a 150.000 Kz |
 
-Uma página simples pode custar menos ou mais conforme exige copy, dominio, certificado, imagens, formularios, hospedagem e integrações.
+Uma página simples pode custar menos ou mais conforme exige copy, domínio, certificado, imagens, formulários, hospedagem e integrações.
 
 Não faça desconto apenas por pressão. Pode reduzir o alcance:
 
@@ -75,7 +75,7 @@ Não faça desconto apenas por pressão. Pode reduzir o alcance:
 
 Esta abordagem permite fechar sem entregar abaixo do preço real.
 
-## 5.4 Contrato minimo
+## 5.4 Contrato mínimo
 
 O contrato pode ser simples, mas deve incluir:
 
@@ -85,7 +85,7 @@ O contrato pode ser simples, mas deve incluir:
 - Prazo.
 - Forma de pagamento.
 - Números de marcos.
-- Limite de revisoes.
+- Limite de revisões.
 - Suporte pós-entrega.
 - Responsabilidade por dados e credenciais.
 - Limites de hospedagem.
@@ -100,7 +100,7 @@ Formas comuns em Angola incluem:
 
 - Transferência bancária.
 - Multicaixa Express.
-- Referencia de pagamento bancário.
+- Referência de pagamento bancário.
 - Pagamento com POS.
 - Transferência para conta confirmada.
 
@@ -130,12 +130,12 @@ Cada método tem regras próprias e taxas que podem mudar. Confirme antes de fec
 
 ### Conversão
 
-Se o pagamento vier em dolares, calcule:
+Se o pagamento vier em dólares, calcule:
 
 - Valor bruto.
 - Taxa da plataforma.
-- Taxa de conversao.
-- Impostos aplicaveis.
+- Taxa de conversão.
+- Impostos aplicáveis.
 - Taxa do banco.
 - Valor líquido.
 
@@ -179,11 +179,11 @@ Antes de declarar o projecto concluído:
 - Testou no celular.
 - Testou no computador.
 - Revogou credenciais de demonstração.
-- Removeu dados ficticios.
+- Removeu dados fictícios.
 - Configurou HTTPS.
-- Confirmou variaveis de ambiente.
+- Confirmou variáveis de ambiente.
 - Testou o fluxo principal.
-- Documentou enderecos e contas.
+- Documentou endereços e contas.
 - Transferiu os ficheiros de forma segura.
 - Guardou uma cópia de segurança.
 - Enviou manual curto.
@@ -192,9 +192,9 @@ Antes de declarar o projecto concluído:
 
 Após entregar, peça ao cliente para testar o fluxo principal e confirmar por escrito. Depois peça feedback publicável sem pressionar.
 
-# Conclusao
+# Conclusão
 
-Conseguir o primeiro emprego ou freela como programador junior em Angola não depende apenas de um curso concluído. Depende de um perfil claro, projectos que possam ser verificados, uma rotina de procura e profissionalismo no pagamento e na entrega.
+Conseguir o primeiro emprego ou freela como programador júnior em Angola não depende apenas de um curso concluído. Depende de um perfil claro, projectos que possam ser verificados, uma rotina de procura e profissionalismo no pagamento e na entrega.
 
 O mercado recompensa quem transforma aprendizagem em capacidade útil. Um projecto com Node.js, API REST, GitHub e hospedagem activa vale mais do que uma lista extensa de tecnologias sem demonstração. Uma abordagem baseada em problema observado vale mais do que uma mensagem fria cheia de qualificações sem contexto.
 
@@ -234,7 +234,7 @@ O mercado recompensa quem transforma aprendizagem em capacidade útil. Um projec
 
 ## Plano dos dias 31 a 60
 
-Construa o dashboard financeiro ou de gestao. Escolha dados ficticios e use filtros, exportação e estados claros. Dê mais atenção à documentação e à qualidade da interface.
+Construa o dashboard financeiro ou de gestão. Escolha dados fictícios e use filtros, exportação e estados claros. Dê mais atenção à documentação e à qualidade da interface.
 
 Crie seu perfil Workana e procure tarefas pequenas. Não aceite projectos sem orçamento claro ou sem alcance definido.
 
@@ -250,7 +250,7 @@ Em seguida:
 
 - Peça uma recomendação ao cliente.
 - Peça autorização para mostrar o projecto.
-- Melhore o portfolio com o feedback recebido.
+- Melhore o portfólio com o feedback recebido.
 - Atualize o CV.
 - Prepare respostas para entrevistas técnicas.
 - Refaça o preço se o trabalho anterior tiver ficado abaixo do custo real.
