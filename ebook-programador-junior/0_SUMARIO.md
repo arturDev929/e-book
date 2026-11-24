@@ -1,0 +1,47 @@
+# Guia Pratico: Como Conseguir o Primeiro Emprego ou Freela como Programador Junior em Angola e no Exterior
+
+## E-book completo
+
+- [Capitulo 1 - O Mercado de TI em Angola](1_introducao.md)
+  - 1.1 O estado real do mercado angolano
+  - 1.2 Por que existe escassez de juniores qualificados
+  - 1.3 Oportunidades no mercado local
+  - 1.4 Trabalho remoto em dolar
+  - 1.5 Posicionamento para competir
+  - 1.6 Plano de 90 dias
+- [Capitulo 2 - O Portfolio Perfeito](2_portfolio.md)
+  - 2.1 O que recrutadores procuram
+  - 2.2 Projeto 1: Sistema de pedidos para restaurante
+  - 2.3 Projeto 2: Dashboard financeiro ou de gestao
+  - 2.4 Qualidade tecnica minima
+  - 2.5 GitHub profissional
+  - 2.6 Publicacao no Render e Vercel
+  - 2.7 Preparacao para entrevistas
+- [Capitulo 3 - Onde Encontrar as Vagas](3_vagas.md)
+  - 3.1 Canais locais
+  - 3.2 LinkedIn para Angola
+  - 3.3 Processo semanal no LinkedIn
+  - 3.4 Workana para iniciantes
+  - 3.5 Como receber sem cartao Visa internacional
+  - 3.6 Propostas que passam a triagem
+- [Capitulo 4 - A Abordagem DAV](4_abordagem_dav.md)
+  - 4.1 O que significa DAV
+  - 4.2 Identificacao de problemas
+  - 4.3 A mensagem DAV em quatro partes
+  - 4.4 Exemplos para empresas angolanas
+  - 4.5 Seguimento sem incomodar
+  - 4.6 Da conversa a uma proposta paga
+  - 4.7 Licitacao reversa e negocios para restaurantes
+- [Capitulo 5 - Como Cobrar e Receber](5_conclusao.md)
+  - 5.1 Como definir o preco
+  - 5.2 Modelos de cobranca
+  - 5.3 Precos de referencia em Kwanzas
+  - 5.4 Contrato minimo
+  - 5.5 Recebimento local
+  - 5.6 Recebimento de clientes estrangeiros
+  - 5.7 Contabilidade e disciplina financeira
+  - 5.8 Checklist antes da entrega
+  - Conclusao e plano dos primeiros 90 dias
+  - Plano dos primeiros 30 dias
+  - Plano dos dias 31 a 60
+  - Plano dos dias 61 a 90
